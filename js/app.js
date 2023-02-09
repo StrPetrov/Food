@@ -19,8 +19,12 @@ const provide = () => {
     
 
     searchBtn.addEventListener('click', function(event) {
+        containerToRender.innerHTML = '';
+        z = 0;
+        y = 0;
         event.preventDefault();
         inputValue = inputField.value;
+        inputField.value = '';
         const foodApi = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${inputValue}`;
 
         fetch(foodApi)
